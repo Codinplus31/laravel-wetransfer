@@ -265,11 +265,7 @@ If uploaded files are not accessible:
 Solution:
 php artisan storage:link
 
-Getting Help:
-If you encounter any issues not covered here, please:
-1. Check the Laravel logs in storage/logs/laravel.log
-2. Open an issue on the GitHub repository
-3. Contact the development team at support@example.com
+
 
 API EXAMPLES
 -----------
