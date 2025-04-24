@@ -34,7 +34,8 @@ Prerequisites:
 
 Step 1: Clone the Repository
 git clone https://github.com/Codinplus31/laravel-wetransfer.git
-cd laravel-file-upload
+
+
 
 Step 2: Install Dependencies
 composer install
