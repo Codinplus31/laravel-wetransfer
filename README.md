@@ -273,7 +273,8 @@ API EXAMPLES
 Example 1: Basic File Upload
 
 Request:
-POST /api/upload HTTP/1.1
+
+``` POST /api/upload HTTP/1.1
 Host: localhost:8000
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
@@ -287,16 +288,19 @@ Content-Disposition: form-data; name="expires_in"
 
 2
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+```
 
+```
 Response:
 {
   "success": true,
   "download_link": "http://localhost:8000/api/download/a1b2c3d4e5f6g7h8i9j0"
 }
-
+```
 Example 2: Password-Protected Upload
 
 Request:
+```
 POST /api/upload HTTP/1.1
 Host: localhost:8000
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
@@ -311,27 +315,34 @@ Content-Disposition: form-data; name="password"
 
 securepassword123
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+```
 
+```
 Response:
 {
   "success": true,
   "download_link": "http://localhost:8000/api/download/k9l8m7n6o5p4q3r2s1t0"
 }
+```
 
 Example 3: Download with Password
 
+```
 Request:
 GET /api/download/k9l8m7n6o5p4q3r2s1t0?password=securepassword123 HTTP/1.1
 Host: localhost:8000
-
+```
 Response: File download stream
 
 Example 4: View Upload Stats
 
+```
 Request:
 GET /api/uploads/stats/a1b2c3d4e5f6g7h8i9j0 HTTP/1.1
 Host: localhost:8000
+```
 
+```
 Response:
 {
   "success": true,
@@ -352,5 +363,7 @@ Response:
       }
     ]
   }
+
+```
 }
 
