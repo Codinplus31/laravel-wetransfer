@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "eac1c8c2-a4d1-4482-b95f-84654b40bbc3",
+		"name": "Laravel File Upload API",
+		"description": "API collection for testing the Laravel File Upload & Sharing API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43924973",
+		"_collection_link": "https://paul-7307636.postman.co/workspace/7fb26ced-fdbe-4c0d-8d03-0e7a21242f8c/collection/43924973-eac1c8c2-a4d1-4482-b95f-84654b40bbc3?action=share&source=collection_link&creator=43924973"
+	},
+	"item": [
+		{
+			"name": "Upload Files",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files[]",
+							"type": "file",
+							"src": "ah0a2SVWi/04.2023-reading-rec-qpms8j6mumhrh54zdp5d9esd7yiuabu062pqv3hk5c.png"
+						},
+						{
+							"key": "expires_in",
+							"value": "2",
+							"description": "Number of days until expiry (optional, default: 1)",
+							"type": "text"
+						},
+						{
+							"key": "email_to_notify",
+							"value": "user@example.com",
+							"description": "Email to notify when upload is complete (optional)",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "secret123",
+							"description": "Password to protect the download (optional)",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "{{base_url}}/api/upload",
+				"description": "Upload files to the server and get a download link\n\nggh"
+			},
+			"response": []
+		},
+		{
+			"name": "Download Files",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/download/{{token}}?password=secret123",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"download",
+						"{{token}}"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": "secret123",
+							"description": "Required if the upload is password protected"
+						}
+					]
+				},
+				"description": "Download files using the token"
+			},
+			"response": []
+		},
+		{
+			"name": "View File Stats",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{base_url}}/api/uploads/stats/{{token}}",
+				"description": "View statistics about the uploaded files"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "your_token_here",
+			"type": "string"
+		}
+	]
+}
