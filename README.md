@@ -50,12 +50,10 @@ touch database/database.sqlite
 chmod 755 database
 chmod 644 database/database.sqlite
 
-Step 4: Configure Environment
-# Copy the example environment file
-cp .env.example .env
+
 
 # Generate application key
-php artisan key:generate
+```php artisan key:generate```
 
 Edit the .env file to use SQLite:
 APP_NAME="File Upload API"
@@ -65,21 +63,22 @@ APP_DEBUG=true
 APP_URL=http://localhost:8000
 
 DB_CONNECTION=sqlite
-# Comment out or remove these lines:
-# DB_HOST=127.0.0.1
-# DB_PORT=3306
-# DB_DATABASE=laravel
-# DB_USERNAME=root
-# DB_PASSWORD=
+ Comment out or remove these lines:
+ DB_HOST=127.0.0.1
+ DB_PORT=3306
+ DB_DATABASE=laravel
+ DB_USERNAME=root
+ DB_PASSWORD=
 
 Step 5: Run Migrations
-php artisan migrate
+```php artisan migrate```
 
 Step 6: Create Storage Symbolic Link
-php artisan storage:link
+
+```php artisan storage:link```
 
 Step 7: Start the Development Server
-php artisan serve
+```php artisan serve```
 
 Your API should now be running at http://localhost:8000.
 
@@ -96,7 +95,7 @@ Files are set to expire based on the expires_in parameter (default: 1 day). The 
 * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
 
 # Or run the cleanup command manually
-php artisan clean:expired-uploads
+```php artisan clean:expired-uploads```
 
 API ENDPOINTS
 ------------
