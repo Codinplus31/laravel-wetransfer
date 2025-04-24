@@ -1,7 +1,7 @@
-LARAVEL FILE UPLOAD & SHARING API
+LARAVEL FILE UPLOAD 
 =================================
 
-A WeTransfer-style file upload and sharing system built with Laravel. This API allows users to upload files, receive shareable download links, and set expiry settings.
+
 
 TABLE OF CONTENTS
 ----------------
