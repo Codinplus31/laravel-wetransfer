@@ -1,19 +1,19 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/upload', [UploadController::class, 'upload']);
+Route::get('/download/{token}', [UploadController::class, 'download'])->name('download');
+Route::get('/uploads/stats/{token}', [UploadController::class, 'stats']);
+
+// Optional: Protected routes if you implement authentication
+// Route::middleware('auth:sanctum')->group(function () {
+//     Route::get('/user/uploads', [UploadController::class, 'userUploads']);
+// });
