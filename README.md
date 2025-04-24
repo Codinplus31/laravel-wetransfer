@@ -33,7 +33,7 @@ Prerequisites:
 - SQLite support for PHP
 
 Step 1: Clone the Repository
-git clone https://github.com/yourusername/laravel-file-upload.git
+git clone https://github.com/Codinplus31/laravel-wetransfer.git
 cd laravel-file-upload
 
 Step 2: Install Dependencies
@@ -91,8 +91,7 @@ By default, uploaded files are stored in the storage/app/uploads directory. You 
 File Expiration:
 Files are set to expire based on the expires_in parameter (default: 1 day). The cleanup command runs daily to remove expired files:
 
-# Set up a cron job to run the scheduler
-* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+
 
 # Or run the cleanup command manually
 ```php artisan clean:expired-uploads```
@@ -170,9 +169,13 @@ Response:
 
 POSTMAN COLLECTION
 -----------------
+HERE IS THE DOCUMENTATION URL 
+
+[https://documenter.getpostman.com/view/43924973/2sB2ixmEd7](https://documenter.getpostman.com/view/43924973/2sB2ixmEd7)
+
 
 Import the Collection:
-1. Download the Postman collection file from the repository
+1. Download the Postman collection file call postmancollection.json from the repository
 2. Open Postman
 3. Click "Import" > "Upload Files" and select the downloaded file
 4. The collection will be imported with all the endpoints configured
